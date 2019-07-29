@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
+import Products from './components/Products'
 import './App.css';
 
 class App extends Component {
@@ -41,14 +42,8 @@ class App extends Component {
         <Header/>
         <h2>{ this.state.statetitle }</h2>
         <h3>Products</h3>
-        {
-          this.state.products.map((product) => (
-            <li key={product.id}>
-              ID: {product.id}<br/>
-              Name: {product.name} <br/>
-            </li>
-          ))
-        }
+        <Products items={this.state.products}/>
+        
       </div>
     )
   }
